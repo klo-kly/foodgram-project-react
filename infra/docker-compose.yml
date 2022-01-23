@@ -12,7 +12,7 @@ services:
     restart: always
     volumes:
       - ../static/:/var/html/static/
-      - ../media/:/var/html/media/
+      - ../media/:/backend/media/recipes/
 
     depends_on:
       - db
