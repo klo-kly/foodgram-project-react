@@ -35,6 +35,7 @@ class RecipeReadSerializer(serializers.ModelSerializer):
     is_favorited = serializers.SerializerMethodField(read_only=True)
     is_in_shopping_cart = serializers.SerializerMethodField(read_only=True)
 
+
     class Meta:
         model = Recipe
         fields = (
@@ -121,6 +122,7 @@ class RecipeSerializer(serializers.ModelSerializer):
         recipe = Recipe.objects.create(author=author, **validated_data)
         self.create_tags(tags, recipe)
         self.create_ingredients(ingredients, recipe)
+
         return recipe
 
     def update(self, instance, validated_data):
@@ -138,10 +140,10 @@ class RecipeSerializer(serializers.ModelSerializer):
 
 
 class RepresentationSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Recipe
         fields = ('id', 'name', 'image', 'cooking_time')
-
 
 class FavoriteSerializer(serializers.ModelSerializer):
     class Meta:
@@ -165,3 +167,4 @@ class ShoppingCartSerializer(serializers.ModelSerializer):
         context = {'request': request}
         return RepresentationSerializer(
             instance.recipe, context=context).data
+

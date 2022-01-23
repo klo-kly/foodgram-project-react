@@ -14,7 +14,6 @@ class IngredientAdmin(ModelAdmin):
     list_filter = ('name',)
     search_fields = ('name',)
 
-
 @register(Recipe)
 class RecipeAdmin(ModelAdmin):
     list_display = ('name', 'author', 'added_in_favorites')

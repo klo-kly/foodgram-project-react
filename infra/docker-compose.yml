@@ -13,19 +13,22 @@ services:
     volumes:
       - ../static/:/var/html/static/
       - ../media/:/var/html/media/
+
     depends_on:
       - db
     env_file:
       - ./.env
 
+
   frontend:
     image: klokly/frontend
     volumes:
       - ../frontend/:/app/result_build/
+
   nginx:
     image: nginx:1.19.3
     ports:
-      - "80:80"
+      - 80:80
     volumes:
       - ../static/:/var/html/static/
       - ../media/:/var/html/media/
@@ -37,6 +40,7 @@ services:
     depends_on:
       - backend
       - frontend
+
 volumes:
   postgres_data:
   static_value:
