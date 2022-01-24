@@ -11,7 +11,7 @@ services:
     image: klokly/backend
     restart: always
     volumes:
-      - ../static/:/var/html/static/
+      - ../static/:/backend/static/
       - ../media/:/backend/media/recipes/
 
     depends_on:
