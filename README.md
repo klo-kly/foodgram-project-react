@@ -10,7 +10,7 @@
 
 ### скопировать этот проект на свой компьютер: (не забудь создать .env)
 ```sh
-git clone https://github.com/nu-shtosh/foodgram-project-react.git
+git clone https://github.com/klo-kly/foodgram-project-react.git
 ```
 ### войти на свой сервер скопировать docker-compose, nginx, .env:
 ```sh
